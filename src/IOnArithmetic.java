@@ -4,10 +4,10 @@ public class IOnArithmetic {
 
     public static void main(String[] args) {
         IOnArithmetic ioa = new IOnArithmetic();
-        ioa.remainderMultiply();
+        ioa.inThailand();
     }
 
-    public static void helloWorld() {
+    public void helloWorld() {
         System.out.println("Hello World!");
     }
 
@@ -98,6 +98,19 @@ public class IOnArithmetic {
         System.out.println(a * b);
     }
 
+    public void wow() {
+        Scanner scanner = new Scanner(System.in);
+        String id = scanner.next();
+        System.out.println(id + "??!");
+    }
+
+    public void inThailand() {
+        int minusYear = 543;
+        Scanner scanner = new Scanner(System.in);
+        int year = Integer.parseInt(scanner.next());
+
+        System.out.println(year - minusYear);
+    }
 }
 
 
