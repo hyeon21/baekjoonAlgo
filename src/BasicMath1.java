@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class BasicMath1 {
 
@@ -8,7 +9,7 @@ public class BasicMath1 {
 
         BasicMath1 bm1 = new BasicMath1();
         try {
-            bm1.getBreakEvenPoint();
+            bm1.printPassCount();
         } catch(Exception e) {
             e.printStackTrace();
         }
@@ -27,5 +28,32 @@ public class BasicMath1 {
             return;
         }
         System.out.println((FIXED_COST / (GOODS_COST - VARIABLE_COST)) + 1);
+    }
+
+    public void printPassCount() {
+
+        try {
+            Scanner sc = new Scanner(System.in);
+            int roomNumber = sc.nextInt();
+            int firstRoomOnLine = 2;
+            int line = 1;
+
+            if (roomNumber < 1 || 1000000000 < roomNumber) {
+                throw new Exception();
+            }
+
+            if (roomNumber == 1) {
+                System.out.println(1);
+            } else {
+                while (firstRoomOnLine <= roomNumber) {
+                    firstRoomOnLine = firstRoomOnLine + (6 * line);
+                    line ++;
+                }
+
+                System.out.println(line);
+            }
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
     }
 }
